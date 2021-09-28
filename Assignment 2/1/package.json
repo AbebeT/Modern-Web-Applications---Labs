@@ -1,0 +1,19 @@
+{
+  "name": "assign2_1",
+  "version": "1.0.0",
+  "description": "This will have an express server that listens to port 5353",
+  "main": "ass2_1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ass2_1.js"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "Abebe Tekle",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
