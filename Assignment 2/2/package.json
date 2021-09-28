@@ -1,0 +1,19 @@
+{
+  "name": "assign2_2",
+  "version": "1.0.0",
+  "description": "Mean Game Application",
+  "main": "assign2_2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node assign2_2.js"
+  },
+  "keywords": [
+    "Node",
+    "MEAN"
+  ],
+  "author": "Abebe Tekle Abrha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
