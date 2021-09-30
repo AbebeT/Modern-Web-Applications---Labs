@@ -1,0 +1,20 @@
+{
+  "name": "assignmet3_2",
+  "version": "1.0.0",
+  "description": "Application that returns a multiple of two number from a query string and from path paramter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm app.js"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "npm"
+  ],
+  "author": "Abebe Tekle Abrha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
