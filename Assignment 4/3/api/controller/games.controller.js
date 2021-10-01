@@ -9,7 +9,6 @@ module.exports.gamesGetAll = function (req, res) {
 
   if (req.query && req.query.count) {
     count = parseInt(req.query.count);
-   
   }
 
   if (req.query && req.query.offset) {
@@ -18,16 +17,15 @@ module.exports.gamesGetAll = function (req, res) {
 
   console.log("GET request received");
 
-  if(count <=9){
-  gamesCollection
-    .find()
-    .skip(offset)
-    .limit(count)
-    .toArray(function (err, games) {
-      res.status(200).json(games);
-    });
-}
-else{
-    res.status(500).json({"error" : "count should not exceed 9"});
-}
+  if (count <= 9) {
+    gamesCollection
+      .find()
+      .skip(offset)
+      .limit(count)
+      .toArray(function (err, games) {
+        res.status(200).json(games);
+      });
+  } else {
+    res.status(500).json({ error: "count should not exceed 9" });
+  }
 };
