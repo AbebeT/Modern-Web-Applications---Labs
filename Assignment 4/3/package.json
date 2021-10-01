@@ -1,0 +1,20 @@
+{
+  "name": "assign4_3",
+  "version": "1.0.0",
+  "description": "Mean Game Application",
+  "main": "assign4_3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node assign4_3.js"
+  },
+  "keywords": [
+    "Node",
+    "MEAN"
+  ],
+  "author": "Abebe Tekle Abrha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2"
+  }
+}
