@@ -3,26 +3,26 @@ const mongoose =require("mongoose");
 const publisherSchema = new mongoose.Schema({
     name :{
         type : String,
-        required : true
+        // required : true
     },
     country :{
         type : String,
-        required : true
+        // required : true
     }
 })
 
 const reviewSchema = new mongoose.Schema({
     name :{
         type : String,
-        required : true
+       
     },
     date :{
         type : String,
-        required : true
+        
     },
     review : {
         type : String,
-        required : true
+        
     }
 })
 
@@ -43,7 +43,7 @@ const gameSchema = new mongoose.Schema({
 
     publisher : publisherSchema,
 
-    review : [reviewSchema]
+    reviews : [reviewSchema]
 });
 
 mongoose.model("Game", gameSchema, "games");
