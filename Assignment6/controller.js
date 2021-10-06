@@ -1,6 +1,6 @@
-angular.module("myPropperApp").controller("MyPropperController", MyPropperController)
+// angular.module("myPropperApp").controller("MyPropperController", MyPropperController)
 
-function MyPropperController(){
-    const vm = this
-    vm.name="Jack"
-}
+// function MyPropperController(){
+//     const vm = this
+//     vm.name="Jack"
+// }
