@@ -5,7 +5,7 @@ const ListOfMusic = mongoose.model("Music");
 getAllMusic = function(req, res){
     console.log("Get all music");
 
-    let count = 5 ;
+    let count = 25 ;
     let offset = 0;
 
     if(req.query && req.query.count){
@@ -85,7 +85,7 @@ deleteMusic = function(req, res){
       }
       else{
         console.log("music deleted");
-        res.status(201).json({"message": "music deleted"});
+        res.status(204).json({"message": "music deleted"});
       }
   
     });

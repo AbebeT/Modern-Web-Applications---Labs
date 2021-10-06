@@ -16,10 +16,13 @@ router.route("/music/:musicId")
         .put(controller.updateMusic);
 
 router.route("/music/:musicId/artists")
-        .get(artistsController.musicGetAll);
+        .get(artistsController.musicGetAll)
+        .post(artistsController.addArtist)
 
-router.route("/music/:musicId/artists/:artistName")
-                .get(artistsController.getMusicArtistById);
+router.route("/music/:musicId/artists/:artistId")
+                .get(artistsController.getMusicArtistById)
+                .delete(artistsController.deleteArtist)
+                .put(artistsController.updateArtist)
 
 
 module.exports = router;
