@@ -1,0 +1,7 @@
+<h1>{{vm.title}}</h1>
+
+<ul>
+    <li ng-repeat="music in vm.musics">
+        <a ng-href="#!/music/{{music._id}}">{{music.genre  }}</a>
+    </li>
+</ul>

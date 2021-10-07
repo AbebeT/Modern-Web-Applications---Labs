@@ -1,7 +1,0 @@
-<h1>{{vm.title}}</h1>
-
-<ul>
-  <li ng-repeat="music in vm.musics | orderBy: ['name', 'numPlayers']">
-    <a ng-href="#!/musics/{{music._id}}">{{music.name | uppercase}}</a>
-  </li>
-</ul>

@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 require("./music.model.js")
 const dbName = "MyNewMusicDB";
-const dbURL = "mongodb://localhost:27017/MyNewMusicDB";
+// const dbURL = "mongodb://localhost:27017/MyNewMusicDB";
+
+const dbURL = process.env.DATABASE_URL + process.env.DATABASE_NAME
 mongoose.connect(dbURL);
 
 mongoose.connection.on("connected", function(){
-    console.log("Mongoose connected to " + "MyNewMusicDB");
+    console.log("Mongoose connected to " + process.env.DATABASE_NAME);
 });
 
 mongoose.connection.on("disconnected", function(){
