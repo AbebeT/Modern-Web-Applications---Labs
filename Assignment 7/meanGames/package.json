@@ -1,0 +1,23 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "This project retrieves all games and only one game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "Node.js",
+    "Mongoose",
+    "Express",
+    "npm"
+  ],
+  "author": "Abebe Tekle",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  }
+}
