@@ -1,0 +1,15 @@
+<a ng-href="#!/jobs">Home</a>
+<h1>{{vm.title}}</h1>
+
+<p>
+  Title: {{vm.job.title | uppercase}}<br />
+  Salary: {{vm.job.salary | currency}} <br />
+  Description: {{vm.job.description}} <br />
+  Experience: {{vm.job.experience}} <br />
+  Skills: {{vm.job.skill[0]}} <br />
+  postdate : {{vm.job.postDate | date: "short"}}<br />
+ 
+</p>
+<button ng-click= vm.deleteJob()>delete</button>
+</br></br>
+
