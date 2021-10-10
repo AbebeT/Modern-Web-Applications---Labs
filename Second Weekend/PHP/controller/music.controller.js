@@ -34,7 +34,7 @@ getAllMusic = function(req, res){
                 res.status(404).json({"message" : "music not found"});
             }
             else{
-            console.log("music found ", musics);
+            console.log("music found ");
             res.status(200).json(musics);
             }
         }
@@ -125,24 +125,50 @@ deleteMusic = function(req, res){
   updateMusic = function(req, res){
     console.log("update request recieved");
     console.log("req.params._id ", req.params.musicId);
+
+    let oldMusic = {};
+   
     
     if(!mongoose.isValidObjectId(req.params.musicId)){
+
+        
       console.log("invalid music id");
       res.send(404).send({"message": "music Id not found"});
     }
-    // res.status(201).json({"message": "Update request received"});
+
+    const id = req.params.musicId;
+      ListOfMusic.findById(id).exec(function(err, music){
+        if(err){
+            console.log("error finding Music");
+            res.status(500).json(err);
+        }
+        else{
+            if(!music){
+                console.log("Music Id not found");
+                res.status(404).json({"message": "Music with given musicId not found"});
+            }
+            console.log("Music Found", music);
+            oldMusic = music;
+        }
+    });
+
+    
+    
+
 
     const musicId = {_id : req.params.musicId}
 
+
     const musicUpdate = {
-        origin : req.body.origin,
-        year : parseInt(req.body.year),
-        //courses : req.body.courses
+        origin : req.body.origin || oldMusic.orgin,
+        year : parseInt(req.body.year) || oldMusic.year,
+        genre : req.body.genre || oldMusic.genre
     }
 
     const returnUpdated = {
         new: true
       }
+      console.log("to be updated ", musicUpdate)
 
     ListOfMusic.findOneAndUpdate(musicId
     , musicUpdate, returnUpdated,  function(error, result){

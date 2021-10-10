@@ -2,10 +2,10 @@ angular.module("musicGenres").controller("MusicsController", MusicsController)
 
 function MusicsController(MusicsFactory, $route){
     const vm= this
-    vm.title= "Music Genres App"
+    vm.title= "Music Genres"
     MusicsFactory.getAllMusics().then(function(musics){
             vm.musics = musics
-            console.log("vm.musics ", vm.musics)
+            // console.log("vm.musics ", vm.musics)
         })
 
         vm.addMusic = function () {
@@ -24,6 +24,22 @@ function MusicsController(MusicsFactory, $route){
                 $route.reload()
               });
             };
+
+            vm.register = function(){
+
+              const newUser = {
+                username : vm.userName,
+                name : vm.name,
+                password: vm.userPassword
+              }
+
+              MusicsFactory.addUser(newUser).then(function(response){
+                console.log("User Saved");
+                $route.reload()
+              })
+
+
+            }
           
 
         

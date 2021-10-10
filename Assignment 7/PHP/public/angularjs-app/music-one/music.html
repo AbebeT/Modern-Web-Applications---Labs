@@ -1,25 +1,64 @@
-<h3 style="text-align: center;"><a ng-href="#!/music">Home</a></h3>
-<h1>Music Information:</br></br>
-    <p> {{vm.music.genre}}
-</p>
+<h3 ><a ng-href="#!/music">Home</a></h3>
+
+    <p> {{vm.music.genre}}</p>
     </h1>
+
+    <div class="form-group row">
 
     <p>
         Genre: {{vm.music.genre}}<br>
         Origin: {{vm.music.origin}}<br>
         Year: {{vm.music.year}}<br>
     </p>
-        Artist
+      Artist
     <p ng-repeat="artist in vm.music.artists">
-        Name : {{artist.name}}<br>
-        Age: {{artist.age}}<br>
-       
-    
+        Name : {{vm.artist.name}}<br>
+        Age: {{artist.age}}<br>   
     </p>
+    </div>
+
 
 </p>
-<button ng-click= vm.deleteJob()>delete</button>
+<button  class="btn-success" ng-click= vm.deleteMusic()>delete</button> 
 </br></br>
 
+
+
+<form   class="col-sm-6" name="vm.musicForm" ng-submit="vm.updateMusic()">
+  <fieldset class="border p-2">
+  <div class="form-group column">
+   
+    <legend >Update Music</legend>
+    <label for="genre" class="col-sm-1 col-form-label">Genre</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="genre"  ng-model="vm.musicGenre" >
+    </div>
+
+    <label for="origin" class="col-sm-1 col-form-label">Origin</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="origin" ng-model="vm.musicOrigin" >
+    </div>
+
+    <label for="year" class="col-sm-1 col-form-label">Year</label>
+    <div class="col-sm-6">
+      <input type="number"  class="form-control-plaintext " id="year" ng-model="vm.musicYear" >
+    </div>
+
+    <!-- <label for="artistName" class="col-sm-1 col-form-label">Name</label> -->
+    <!-- <div class="col-sm-3">
+      <input type="text"  class="form-control-plaintext" id="artistName"  ng-model="vm.artistName">
+    </div>
+    <label for="artistAge" class="col-sm-1 col-form-label">Age</label>
+    <div class="col-sm-3">
+      <input type="number"  class="form-control-plaintext" id="artistAge"  ng-model="vm.age">
+    </div> -->
+    <div>
+    <button type="submit" class="btn-success">Update Music</button>
+    </div>
+
+
+    </div>
+    </fieldset>    
+    </form>
   
     

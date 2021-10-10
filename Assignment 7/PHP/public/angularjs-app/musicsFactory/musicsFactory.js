@@ -7,7 +7,9 @@ function MusicsFactory($http){
         getAllMusics : getAll,
         getOneMusic : getOne,
         deleteOne: deleteOne,
-        addOne : addOne
+        addOne : addOne,
+        updateOne : updateOne,
+        addUser:addUser
         
     };
 
@@ -29,6 +31,19 @@ function MusicsFactory($http){
         return $http.delete("/api/music/"+ musicId)
             .then(complete).catch(fail)
     }
+
+    function updateOne(musicId, newMusic){
+        return $http.put("/api/music/"+ musicId, newMusic)
+            .then(complete).catch(fail)
+    }
+
+    function addUser(newUser){
+        console.log("inside add user")
+        return $http.post("/api/users/register", newUser)
+            .then(complete).catch(fail)
+    }
+
+
 
     function complete(response){
         console.log("got response");

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 require("./music.model.js")
+require("./users-model")
 const dbName = "MyNewMusicDB";
 // const dbURL = "mongodb://localhost:27017/MyNewMusicDB";
 

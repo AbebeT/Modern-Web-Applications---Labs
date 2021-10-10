@@ -1,53 +1,65 @@
+<!-- <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    Username: <input type="text" ng-model="vm.userName" />
+    Name: <input type="text" ng-model="vm.name" />
+    Password: <input type="text" ng-model="vm.userPassword" />
+    <button ng-click="vm.register()">Login</button>
+
+  </div>
+</nav> -->
 <h1>{{vm.title}}</h1>
 
-Search Music : <input type="text" name="searchText" ng-model="searchText" />
+<div class="container">
 
+Search Music : <input type="text" name="searchText" ng-model="searchText" />
+<div class="row">
+  <div class="col">
 <ul>
   <li ng-repeat="music in vm.musics | filter : searchText">
     <a ng-href="#!/music/{{music._id}}">{{music.genre}}</a>
   </li>
 </ul>
+</div>
 
-<form name="vm.musicForm" ng-submit="vm.addMusic()">
-  Genre :
-  <input
-    type="text"
-    name="genre"
-    required
-    ng-model="vm.musicGenre"
-    style="color: black"
-  /><br />
 
-  Origin :
-  <input
-    type="text"
-    name="origin"
-    ng-model="vm.musicOrigin"
-    style="color: black"
-  /><br />
 
-  Year :
-  <input
-    type="text"
-    name="year"
-    ng-model="vm.musicYear"
-    style="color: black"
-  /><br />
+<form   class="col-sm-12" name="vm.musicForm" ng-submit="vm.addMusic()">
+  <fieldset class="border p-2">
+  <div class="form-group column">
+   
+    <legend >Add Music</legend>
+    <label for="genre" class="col-sm-1 col-form-label">Genre</label>
+    <div class="col-sm-12">
+      <input type="text"  class="form-control-plaintext" id="genre"  ng-model="vm.musicGenre" >
+    </div>
 
-  Artist name :
-  <input
-    type="text"
-    name="artistName"
-    ng-model="vm.artistName"
-    style="color: black"
-  /><br />
-  Artist age :
-  <input
-    type="text"
-    name="artistAge"
-    ng-model="vm.artistAge"
-    style="color: black"
-  /><br />
+    <label for="origin" class="col-sm-1 col-form-label">Origin</label>
+    <div class="col-sm-12">
+      <input type="text"  class="form-control-plaintext" id="origin" ng-model="vm.musicOrigin" >
+    </div>
 
-  <button type="submit" class="btn-success">Add Music</button>
-</form>
+    <label for="year" class="col-sm-1 col-form-label">Year</label>
+    <div class="col-sm-12">
+      <input type="number"  class="form-control-plaintext " id="year" ng-model="vm.musicYear" >
+    </div>
+
+    <label for="artistName" class="col-sm-1 col-form-label">Artist Name</label> 
+    <div class="col-sm-12">
+      <input type="text"  class="form-control-plaintext" id="artistName"  ng-model="vm.artistName">
+    </div>
+    <label for="artistAge" class="col-sm-1 col-form-label">Age</label>
+    <div class="col-sm-12">
+      <input type="number"  class="form-control-plaintext" id="artistAge"  ng-model="vm.artistAge">
+    </div>
+    <div>
+    <button type="submit" class="btn-success">Add Music</button>
+    </div>
+
+
+    </div>
+    </fieldset>    
+    </form>
+
+    </div>
+  
+
