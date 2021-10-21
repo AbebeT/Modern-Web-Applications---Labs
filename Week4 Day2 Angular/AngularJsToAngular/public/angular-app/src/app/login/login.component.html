@@ -1,0 +1,27 @@
+
+<div>
+<form #loginForm = "ngForm" (ngSubmit) = "onLogin()" novalidate>
+ 
+    
+      <div class="myLoginForm">
+          <label>
+              Username: 
+              <input required name = "username"  id="username" placeholder="Username" ngModel/>
+          </label>
+      </div>
+      <div>
+          <label>
+              Password: 
+              <input  required type="password" name = "password"  id="password" placeholder="Password" ngModel/>
+          </label>
+      </div>
+     
+  
+      <button class="btn-success" type="submit" [disabled] = "loginForm.invalid" >Login</button>
+      
+  </form>
+</div>
+<br/>
+
+<a routerLink = ""> Create account </a>
+  

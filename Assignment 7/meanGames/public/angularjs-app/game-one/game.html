@@ -1,0 +1,58 @@
+<h3 ><a ng-href="#!/games">Home</a></h3>
+
+    <p> {{vm.game.genre}}</p>
+    </h1>
+
+    <div class="form-group row">
+
+    <p>
+        Title: {{vm.game.title}}<br>
+        Price: {{vm.game.price}}<br>
+        Minimum Players: {{vm.game.minPlayers}}<br>
+        Maximum Players: {{vm.game.maxPlayers}}<br>
+    </p>
+    </div>
+
+
+</p>
+<button  class="btn-success" ng-click= vm.deleteGame()>delete</button> 
+</br></br>
+
+
+
+<form   class="col-sm-6" name="vm.gameForm" ng-submit="vm.updateGame()">
+  <fieldset class="border p-2">
+  <div class="form-group column">
+   
+    <legend >Update Game</legend>
+    <label for="title" class="col-sm-1 col-form-label">Title</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="title"  ng-model="vm.gameTitle" >
+    </div>
+
+    <label for="price" class="col-sm-1 col-form-label">Price</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="price"  ng-model="vm.gamePrice" >
+    </div>
+
+    <label for="origin" class="col-sm-1 col-form-label">Minimum Players</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="origin" ng-model="vm.gameMinPlayers" >
+    </div>
+
+    <label for="origin" class="col-sm-1 col-form-label">Maximum Players</label>
+    <div class="col-sm-6">
+      <input type="text"  class="form-control-plaintext" id="origin" ng-model="vm.gameMaxPlayers" >
+    </div>
+
+   
+    <div>
+    <button type="submit" class="btn-success">Update Game</button>
+    </div>
+
+
+    </div>
+    </fieldset>    
+    </form>
+  
+    

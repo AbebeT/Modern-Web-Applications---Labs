@@ -1,0 +1,75 @@
+<!-- <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    Username: <input type="text" ng-model="vm.userName" />
+    Name: <input type="text" ng-model="vm.name" />
+    Password: <input type="text" ng-model="vm.userPassword" />
+    <button ng-click="vm.register()">Login</button>
+
+  </div>
+</nav> -->
+
+
+<div class="container">
+  <h1>{{vm.title}}</h1>
+  Search Game : <input type="text" name="searchText" ng-model="searchText" />
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li ng-repeat="game in vm.games | filter : searchText">
+          <a ng-href="#!/games/{{game._id}}">{{game.title}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="col-sm-12" name="vm.gameForm" ng-submit="vm.addGame()">
+      <fieldset class="border p-2">
+        <div class="form-group column">
+          <legend>Add Game</legend>
+          <label for="genre" class="col-sm-3 col-form-label">Title</label>
+          <div class="col-sm-12">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              id="title"
+              ng-model="vm.gameTitle"
+            />
+          </div>
+
+          <label for="origin" class="col-sm-3 col-form-label">Price</label>
+          <div class="col-sm-12">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              id="price"
+              ng-model="vm.gamePrice"
+            />
+          </div>
+
+          <label for="minPlayers" class="col-sm-3 col-form-label">Minimum Players</label>
+          <div class="col-sm-12">
+            <input
+              type="number"
+              class="form-control-plaintext"
+              id="minPlayers"
+              ng-model="vm.minPlayers"
+            />
+          </div>
+          <label for="maxPlayers" class="col-sm-3 col-form-label">Maximum Players</label>
+          <div class="col-sm-12">
+            <input
+              type="number"
+              class="form-control-plaintext"
+              id="maxPlayers"
+              ng-model="vm.maxPlayers"
+            />
+          </div>
+
+          
+          <div>
+            <button type="submit" class="btn-success">Add Game</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

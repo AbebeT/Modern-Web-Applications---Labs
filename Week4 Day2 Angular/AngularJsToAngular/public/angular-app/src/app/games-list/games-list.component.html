@@ -1,0 +1,55 @@
+<h1>Games List</h1>
+<ul>
+  <li *ngFor="let game of games">
+    <a routerLink="{{ game._id }}"> {{ game.title }} </a>
+    <br />
+  </li>
+</ul>
+
+<button class="btn-success" (click)="onPrevious()">Previous page</button
+><button (click)="onNext()" class="btn-success">Next page</button>
+
+<form #registerGame="ngForm" (ngSubmit)="onAddGame()" novalidate>
+  <div>
+    <label>
+      Title:
+
+      <input
+        name="title"
+        id="title"
+        placeholder="Game Title"
+        ngModel
+        required
+      />
+    </label>
+  </div>
+  <div>
+    <label>
+      Price:
+      <input name="price" id="price" placeholder="Price" ngModel />
+    </label>
+  </div>
+  <div>
+    <label>
+      Year:
+      <input type="year" name="year" id="year" placeholder="Year" ngModel />
+    </label>
+  </div>
+  <div>
+    <label>
+      Min Players:
+      <input type="minPlayers" name="minPlayers" ngModel />
+    </label>
+  </div>
+  <div>
+    <label>
+      Max Players:
+      <input type="maxPlayers" name="maxPlayers" ngModel />
+    </label>
+  </div>
+
+  <button class="btn-success" type="submit" [disabled]="registerGame.invalid">
+    Add
+  </button>
+  <button class="btn-success" type="button" (click)="onClear()">Clear</button>
+</form>
